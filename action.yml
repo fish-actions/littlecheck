@@ -1,0 +1,20 @@
+---
+name: fish-actions/littlecheck
+
+description: Run littlecheck
+
+branding:
+  icon: check-circle
+  color: blue
+
+inputs:
+  files:
+    description: "Files to run littlecheck on"
+    required: true
+
+runs:
+  using: composite
+
+  steps:
+    - run: python -S ./littlecheck.py --progress ${{ inputs.plugins }}
+      shell: bash
