@@ -16,7 +16,5 @@ runs:
   using: composite
 
   steps:
-    - run: >
-        python -S ${{ github.action_path }}/littlecheck.py --progress 
-        ${{ inputs.files }}
+    - run: python ${{ github.action_path }}/littlecheck.py --progress ${{ inputs.files }}
       shell: bash
